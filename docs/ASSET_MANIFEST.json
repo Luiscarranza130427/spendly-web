@@ -1,0 +1,21 @@
+{
+  "brand/spendly-icon-transparent.png": "Icono de marca aislado. Útil para favicon, navbar o detalles.",
+  "brand/spendly-logo-horizontal-transparent.png": "Wordmark horizontal para navbar/footer.",
+  "brand/spendly-logo-variants.webp": "Referencia de variantes de logo claro/oscuro.",
+  "hero/hero-illustration.webp": "Ilustración principal para Hero sin depender de un screenshot real.",
+  "hero/hero-banner-reference.webp": "Referencia de composición del Hero con texto + dispositivos.",
+  "mockups/dashboard-desktop-mobile.webp": "Referencia visual de Spendly en desktop y móvil.",
+  "features/features-icons-grid.webp": "Conjunto visual de funciones principales.",
+  "features/feature-finanzas-claras.webp": "Banner para sección de claridad financiera.",
+  "features/feature-seguridad.webp": "Banner para la sección de seguridad.",
+  "features/feature-multidispositivo.webp": "Banner para sección responsive/multidispositivo.",
+  "features/feature-metas.webp": "Banner para metas de ahorro.",
+  "features/planes-gratis-pro-reference.webp": "Referencia visual para pricing.",
+  "sidebar/spendly-sidebar-finance.webp": "Ilustración financiera que ya se definió para Spendly.",
+  "backgrounds/spendly-soft-gradient-background.webp": "Fondo suave para secciones.",
+  "backgrounds/decorative-resources.webp": "Recursos decorativos verdes.",
+  "social/spendly-og-1200x630.webp": "Imagen OG/social 1200x630.",
+  "social/spendly-social-square-1080.webp": "Pieza cuadrada 1080x1080 para redes.",
+  "references/spendly-full-media-board.png": "Tablero completo de referencia visual y branding.",
+  "references/spendly-landing-concept-board.png": "Concepto visual alternativo de landing."
+}

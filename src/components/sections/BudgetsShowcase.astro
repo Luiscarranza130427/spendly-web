@@ -1,0 +1,62 @@
+---
+import Badge from '../ui/Badge.astro';
+---
+
+<section class="py-16 sm:py-24 bg-surface-bg">
+  <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <!-- Columna Visual Izquierda -->
+      <div class="lg:col-span-6 order-2 lg:order-1 flex justify-center">
+        <div class="w-full max-w-lg rounded-2xl sm:rounded-3xl p-3 bg-white border border-surface-border shadow-soft-lg">
+          <img
+            src="/images/illustrations/budgets-3d.jpg"
+            alt="Ilustración 3D de presupuestos y límites de gastos en Spendly."
+            width="560"
+            height="380"
+            class="w-full h-auto rounded-xl sm:rounded-2xl object-cover"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <!-- Columna Texto Derecha -->
+      <div class="lg:col-span-6 order-1 lg:order-2 flex flex-col items-start">
+        <div class="mb-3">
+          <Badge variant="mint">Presupuestos Inteligentes</Badge>
+        </div>
+
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-content-primary leading-[1.18]">
+          Decide cuánto gastar<br />
+          <span class="spendly-gradient-text">antes de preguntarte dónde se fue.</span>
+        </h2>
+
+        <p class="mt-5 text-base sm:text-lg text-content-secondary leading-relaxed">
+          Define límites y sigue tu progreso para mantener tus gastos bajo control a lo largo de cada mes sin sorpresas ni estrés.
+        </p>
+
+        <div class="mt-8 space-y-3.5 w-full">
+          <div class="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-surface-border">
+            <div class="w-8 h-8 rounded-lg bg-spendly-100 text-spendly-700 flex items-center justify-center shrink-0">
+              <span class="text-xs font-bold">1</span>
+            </div>
+            <p class="text-sm text-content-primary font-medium">Asigna un tope a categorías clave como alimentación, ocio o transporte.</p>
+          </div>
+
+          <div class="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-surface-border">
+            <div class="w-8 h-8 rounded-lg bg-spendly-100 text-spendly-700 flex items-center justify-center shrink-0">
+              <span class="text-xs font-bold">2</span>
+            </div>
+            <p class="text-sm text-content-primary font-medium">Observa barras de progreso que se actualizan automáticamente con cada gasto.</p>
+          </div>
+
+          <div class="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-surface-border">
+            <div class="w-8 h-8 rounded-lg bg-spendly-100 text-spendly-700 flex items-center justify-center shrink-0">
+              <span class="text-xs font-bold">3</span>
+            </div>
+            <p class="text-sm text-content-primary font-medium">Ajusta tus hábitos a tiempo antes de sobrepasar tu capacidad del mes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

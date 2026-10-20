@@ -1,0 +1,50 @@
+---
+import SectionTitle from '../ui/SectionTitle.astro';
+import { homeFaqs } from '../../data/faq';
+---
+
+<section id="preguntas" class="py-16 sm:py-24 bg-white border-y border-surface-border">
+  <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionTitle
+      badge="Resolvemos tus Dudas"
+      title="Preguntas frecuentes sobre"
+      highlightText="Spendly"
+      subtitle="Todo lo que necesitas saber antes de dar el primer paso para organizar tus finanzas personales."
+      align="center"
+    />
+
+    <div class="mt-14 max-w-3xl mx-auto space-y-4">
+      {homeFaqs.map((faq) => (
+        <details
+          class="group rounded-2xl border border-surface-border bg-surface-cardSubtle transition-all duration-200 open:bg-white open:shadow-soft-md open:border-spendly-200"
+        >
+          <summary
+            class="flex items-center justify-between p-5 sm:p-6 cursor-pointer list-none select-none rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-spendly-500"
+          >
+            <span class="text-base sm:text-lg font-semibold text-content-primary pr-4">
+              {faq.question}
+            </span>
+            <div class="w-8 h-8 rounded-lg bg-spendly-100 text-spendly-700 flex items-center justify-center shrink-0 transition-transform duration-200 group-open:rotate-180 border border-spendly-200">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </summary>
+          <div class="px-5 sm:px-6 pb-5 sm:pb-6 pt-1 text-sm sm:text-base text-content-secondary leading-relaxed border-t border-surface-borderSubtle mt-1">
+            <p>{faq.answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+
+    <!-- Enlace a más preguntas -->
+    <div class="mt-10 text-center">
+      <p class="text-sm text-content-secondary">
+        ¿Tienes otra consulta?{' '}
+        <a href="/preguntas" class="font-semibold text-spendly-600 hover:text-spendly-700 underline underline-offset-4">
+          Revisa nuestra página completa de preguntas y respuestas
+        </a>
+      </p>
+    </div>
+  </div>
+</section>

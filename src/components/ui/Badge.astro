@@ -1,0 +1,25 @@
+---
+interface Props {
+  variant?: 'mint' | 'primary' | 'outline' | 'neutral';
+  class?: string;
+  dot?: boolean;
+}
+
+const {
+  variant = 'mint',
+  class: className = '',
+  dot = false,
+} = Astro.props;
+
+const variants = {
+  mint: 'bg-spendly-100 text-spendly-700 border-spendly-200',
+  primary: 'bg-spendly-500 text-white border-spendly-600',
+  outline: 'bg-white text-spendly-700 border-surface-border shadow-soft-sm',
+  neutral: 'bg-surface-cardSubtle text-content-secondary border-surface-border',
+};
+---
+
+<span class={`inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-full border ${variants[variant]} ${className}`}>
+  {dot && <span class="w-1.5 h-1.5 rounded-full bg-spendly-500 animate-pulse-subtle" aria-hidden="true" />}
+  <slot />
+</span>

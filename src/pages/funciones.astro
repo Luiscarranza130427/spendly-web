@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/ui/Button.astro';
+import Badge from '../components/ui/Badge.astro';
+import SectionTitle from '../components/ui/SectionTitle.astro';
+import FeaturesCarousel from '../components/ui/FeaturesCarousel.astro';
+import FinalCTA from '../components/sections/FinalCTA.astro';
+import { coreFeatures, additionalFeatures } from '../data/features';
+import { getAppUrl } from '../data/navigation';
+
+const allFeaturesList = [...coreFeatures, ...additionalFeatures];
+const registerUrl = getAppUrl('registro');
+
+const seoTitle = 'Funcionalidades — Spendly | Todo lo que necesitas para tu dinero';
+const seoDescription = 'Descubre las herramientas de Spendly para gestionar cuentas, movimientos, análisis, presupuestos, metas de ahorro y transacciones periódicas.';
+---
+
+<BaseLayout title={seoTitle} description={seoDescription}>
+  <!-- Hero de la página de funciones -->
+  <section class="py-16 sm:py-24 bg-surface-bg border-b border-surface-border">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8 text-center" data-reveal>
+      <Badge variant="mint" class="mb-4">Catálogo de Funcionalidades</Badge>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-content-primary max-w-4xl mx-auto leading-[1.15]">
+        Todo lo que necesitas para <span class="spendly-gradient-text">entender mejor tu dinero.</span>
+      </h1>
+      <p class="mt-6 text-lg text-content-secondary max-w-2xl mx-auto leading-relaxed">
+        Cada herramienta de Spendly ha sido diseñada pensando en la claridad, la velocidad y la simplicidad visual sin la sobrecarga técnica de las apps bancarias tradicionales.
+      </p>
+
+      <div class="mt-8 flex justify-center gap-4">
+        <Button href={registerUrl} size="lg" variant="primary">
+          Empieza gratis ahora
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carrusel Interactivo de Funciones con Animaciones -->
+  <section class="py-14 bg-white border-b border-surface-border" data-reveal>
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionTitle
+        badge="Vista Interactiva"
+        title="Explora Spendly"
+        highlightText="en movimiento"
+        subtitle="Navega interactivamente entre las herramientas diseñadas para darte claridad y control sobre cada aspecto de tus finanzas."
+        align="center"
+      />
+      <div class="mt-6">
+        <FeaturesCarousel />
+      </div>
+    </div>
+  </section>
+
+  <!-- Lista detallada de funciones alternadas -->
+  <section class="py-16 sm:py-24 bg-surface-bg">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+      {
+        allFeaturesList.map((item, index) => {
+          const isEven = index % 2 === 0;
+          return (
+            <div id={item.id} class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              <!-- Columna Texto -->
+              <div class={`lg:col-span-6 flex flex-col items-start ${isEven ? 'order-1' : 'order-1 lg:order-2'}`}>
+                <div class="mb-3">
+                  <span class="text-xs font-bold tracking-wider uppercase text-spendly-700 bg-spendly-100 px-3 py-1 rounded-full border border-spendly-200">
+                    {item.title}
+                  </span>
+                </div>
+
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-content-primary leading-[1.2]">
+                  {item.tagline}
+                </h2>
+
+                <p class="mt-4 text-base sm:text-lg text-content-secondary leading-relaxed">
+                  {item.description}
+                </p>
+
+                <!-- Beneficio Destacado -->
+                <div class="mt-6 p-4 rounded-xl bg-surface-cardSubtle border border-surface-border w-full">
+                  <p class="text-xs font-bold uppercase tracking-wider text-spendly-700 mb-1">
+                    Beneficio clave
+                  </p>
+                  <p class="text-sm text-content-primary font-medium">
+                    {item.benefit}
+                  </p>
+                </div>
+
+                <!-- Lista de puntos -->
+                <ul class="mt-6 space-y-2.5 w-full">
+                  {item.highlights.map((h) => (
+                    <li class="flex items-start text-sm text-content-secondary">
+                      <svg class="w-4 h-4 text-spendly-500 mr-2.5 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span>{h}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <!-- Columna Visual -->
+              <div class={`lg:col-span-6 flex justify-center ${isEven ? 'order-2' : 'order-2 lg:order-1'}`}>
+                <div class="w-full max-w-lg rounded-2xl sm:rounded-3xl p-3 bg-surface-cardSubtle border border-surface-border shadow-soft-lg">
+                  <img
+                    src={item.assetPath || '/images/illustrations/hero-fintech.png'}
+                    alt={`Ilustración visual de ${item.title} en Spendly`}
+                    width="560"
+                    height="380"
+                    class="w-full h-auto rounded-xl sm:rounded-2xl object-cover shadow-soft"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </section>
+
+  <FinalCTA />
+</BaseLayout>

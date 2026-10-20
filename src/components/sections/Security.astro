@@ -1,0 +1,95 @@
+---
+import SectionTitle from '../ui/SectionTitle.astro';
+
+const securityPoints = [
+  {
+    title: 'Sesiones protegidas',
+    description: 'Gestión segura de credenciales y cookies protegidas con atributos de seguridad para impedir accesos no autorizados.',
+    icon: 'Key',
+  },
+  {
+    title: 'Conexiones HTTPS',
+    description: 'Toda la comunicación entre tu navegador y nuestros servidores viaja cifrada mediante protocolos TLS modernos.',
+    icon: 'Lock',
+  },
+  {
+    title: 'Información aislada por usuario',
+    description: 'Tus cuentas, saldos y movimientos pertenecen exclusivamente a tu espacio financiero. Ningún otro usuario puede acceder a tus registros.',
+    icon: 'Users',
+  },
+  {
+    title: 'Validaciones del lado servidor',
+    description: 'Cada operación y cambio de saldo se somete a validación estricta en el backend para preservar la integridad de tus datos.',
+    icon: 'ServerCheck',
+  },
+];
+---
+
+<section id="seguridad" class="py-16 sm:py-24 bg-white border-y border-surface-border">
+  <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionTitle
+      badge="Privacidad y Protección"
+      title="Tus finanzas merecen"
+      highlightText="privacidad y rigor"
+      subtitle="La confianza se construye con hechos técnicos reales. Diseñamos Spendly con controles estrictos de acceso y protección de datos."
+      align="center"
+    />
+
+    <div class="mt-14 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <!-- Grid de 4 Pilares de Seguridad -->
+      <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5">
+        {securityPoints.map((item) => (
+          <div class="spendly-card p-5 bg-surface-cardSubtle border-surface-border flex flex-col">
+            <div class="w-10 h-10 rounded-xl bg-spendly-100 text-spendly-700 flex items-center justify-center mb-3.5 border border-spendly-200">
+              {item.icon === 'Key' && (
+                <svg class="w-5 h-5 text-spendly-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                </svg>
+              )}
+              {item.icon === 'Lock' && (
+                <svg class="w-5 h-5 text-spendly-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+              )}
+              {item.icon === 'Users' && (
+                <svg class="w-5 h-5 text-spendly-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              )}
+              {item.icon === 'ServerCheck' && (
+                <svg class="w-5 h-5 text-spendly-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              )}
+            </div>
+            <h3 class="text-base font-bold text-content-primary mb-1.5">
+              {item.title}
+            </h3>
+            <p class="text-xs sm:text-sm text-content-secondary leading-relaxed">
+              {item.description}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Banner Visual de Seguridad -->
+      <div class="lg:col-span-5 flex justify-center">
+        <div class="w-full max-w-md rounded-2xl p-3 bg-surface-cardSubtle border border-surface-border shadow-soft-lg">
+          <img
+            src="/images/illustrations/security.png"
+            alt="Ilustración visual de seguridad y protección de datos en Spendly."
+            width="480"
+            height="360"
+            class="w-full h-auto rounded-xl object-cover"
+            loading="lazy"
+          />
+          <div class="mt-3 p-3 bg-white rounded-lg border border-surface-borderSubtle text-center">
+            <p class="text-xs text-content-secondary">
+              Transparencia técnica sin afirmaciones falsas de mercadeo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

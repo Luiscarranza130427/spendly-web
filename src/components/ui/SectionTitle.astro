@@ -1,0 +1,51 @@
+---
+interface Props {
+  badge?: string;
+  title: string;
+  highlightText?: string;
+  subtitle?: string;
+  align?: 'center' | 'left';
+  as?: 'h1' | 'h2' | 'h3';
+  class?: string;
+}
+
+const {
+  badge,
+  title,
+  highlightText,
+  subtitle,
+  align = 'center',
+  as = 'h2',
+  class: className = '',
+} = Astro.props;
+
+const HeadingTag = as;
+const isCentered = align === 'center';
+---
+
+<div class={`flex flex-col ${isCentered ? 'items-center text-center max-w-3xl mx-auto' : 'items-start text-left max-w-2xl'} ${className}`}>
+  {badge && (
+    <div class="mb-3.5">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-spendly-100 text-spendly-700 border border-spendly-200">
+        <span class="w-1.5 h-1.5 rounded-full bg-spendly-500" aria-hidden="true"></span>
+        {badge}
+      </span>
+    </div>
+  )}
+
+  <HeadingTag class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-content-primary leading-[1.15]">
+    {title}
+    {highlightText && (
+      <>
+        {' '}
+        <span class="spendly-gradient-text">{highlightText}</span>
+      </>
+    )}
+  </HeadingTag>
+
+  {subtitle && (
+    <p class="mt-4 text-base sm:text-lg text-content-secondary leading-relaxed font-normal">
+      {subtitle}
+    </p>
+  )}
+</div>

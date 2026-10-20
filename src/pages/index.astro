@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import TrustStrip from '../components/sections/TrustStrip.astro';
+import Problem from '../components/sections/Problem.astro';
+import Solution from '../components/sections/Solution.astro';
+import Features from '../components/sections/Features.astro';
+import ProductShowcase from '../components/sections/ProductShowcase.astro';
+import AccountsShowcase from '../components/sections/AccountsShowcase.astro';
+import AnalyticsShowcase from '../components/sections/AnalyticsShowcase.astro';
+import BudgetsShowcase from '../components/sections/BudgetsShowcase.astro';
+import GoalsShowcase from '../components/sections/GoalsShowcase.astro';
+import MultiDevice from '../components/sections/MultiDevice.astro';
+import Security from '../components/sections/Security.astro';
+import PricingPreview from '../components/sections/PricingPreview.astro';
+import FAQ from '../components/sections/FAQ.astro';
+import FinalCTA from '../components/sections/FinalCTA.astro';
+
+const seoTitle = 'Spendly — Organiza tus finanzas personales';
+const seoDescription = 'Controla tus ingresos, gastos, cuentas, presupuestos y metas desde un solo lugar de forma sencilla, visual y privada con Spendly.';
+---
+
+<BaseLayout title={seoTitle} description={seoDescription}>
+  <Hero />
+  <TrustStrip />
+  <Problem />
+  <Solution />
+  <Features />
+  <ProductShowcase />
+  <AccountsShowcase />
+  <AnalyticsShowcase />
+  <BudgetsShowcase />
+  <GoalsShowcase />
+  <MultiDevice />
+  <Security />
+  <PricingPreview />
+  <FAQ />
+  <FinalCTA />
+</BaseLayout>

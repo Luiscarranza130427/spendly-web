@@ -1,0 +1,45 @@
+---
+import Button from '../ui/Button.astro';
+import { getAppUrl } from '../../data/navigation';
+
+const registerUrl = getAppUrl('registro');
+---
+
+<section class="py-16 sm:py-24 bg-surface-bg relative overflow-hidden">
+  <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="relative rounded-3xl bg-spendly-700 text-white px-6 py-14 sm:px-12 sm:py-20 text-center overflow-hidden shadow-soft-xl">
+      <!-- Elementos decorativos de fondo sutiles -->
+      <div class="absolute inset-0 pointer-events-none -z-0 opacity-20">
+        <div class="absolute -top-24 -left-24 w-80 h-80 rounded-full bg-spendly-400 blur-3xl"></div>
+        <div class="absolute -bottom-24 -right-24 w-80 h-80 rounded-full bg-spendly-300 blur-3xl"></div>
+      </div>
+
+      <div class="relative z-10 max-w-2xl mx-auto flex flex-col items-center">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-spendly-200 border border-white/20 mb-6">
+          Comienza en minutos
+        </span>
+
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.15]">
+          Empieza a ordenar tus finanzas hoy.
+        </h2>
+
+        <p class="mt-5 text-base sm:text-lg text-spendly-100 leading-relaxed max-w-xl">
+          Reúne tus cuentas, movimientos, presupuestos y metas en Spendly. Una sola experiencia para tener control y tranquilidad.
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+          <Button href={registerUrl} size="lg" variant="primary" class="w-full sm:w-auto bg-spendly-500 hover:bg-spendly-600 text-white border-0 shadow-lg px-8">
+            Crear cuenta gratis
+          </Button>
+          <Button href="/funciones" size="lg" variant="outline" class="w-full sm:w-auto bg-white/10 text-white border-white/30 hover:bg-white/20 hover:text-white">
+            Explorar todas las funciones
+          </Button>
+        </div>
+
+        <p class="mt-6 text-xs text-spendly-200">
+          Plan gratuito activo • Sin necesidad de tarjeta • Acceso inmediato
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,15 @@
+{
+  "brand": [
+    "spendly-logo.svg",
+    "spendly-favicon.svg"
+  ],
+  "illustrations": [
+    "hero-fintech.png",
+    "accounts-wallet.png",
+    "analytics-dashboard.png",
+    "security.png",
+    "multidevice.png",
+    "goals-savings.png"
+  ],
+  "note": "Imágenes generadas sin texto para la landing Astro de Spendly."
+}

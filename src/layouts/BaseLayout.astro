@@ -1,0 +1,110 @@
+---
+import '../styles/global.css';
+import Navbar from '../components/layout/Navbar.astro';
+import Footer from '../components/layout/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: string;
+  type?: 'website' | 'article';
+}
+
+const {
+  title = 'Spendly — Todo tu dinero. Un solo lugar.',
+  description = 'Controla tus ingresos, gastos, cuentas, presupuestos y metas de forma sencilla, visual y organizada con Spendly.',
+  image = '/images/social/spendly-og-1200x630.webp',
+  canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://spendly.novatec.ink').href,
+  type = 'website',
+} = Astro.props;
+
+const siteUrl = (Astro.site || 'https://spendly.novatec.ink').toString().replace(/\/+$/, '');
+const fullImageUrl = image.startsWith('http') ? image : `${siteUrl}${image.startsWith('/') ? '' : '/'}${image}`;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Spendly',
+  url: siteUrl,
+  applicationCategory: 'FinanceApplication',
+  operatingSystem: 'Any (Web Browser)',
+  browserRequirements: 'Requires JavaScript. Requires HTML5.',
+  description: 'Aplicación web para gestión de finanzas personales, presupuestos, cuentas y metas de ahorro.',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+  },
+  featureList: [
+    'Gestión de cuentas bancarias y efectivo',
+    'Registro y categorización de movimientos',
+    'Control de presupuestos mensuales',
+    'Seguimiento visual de metas de ahorro',
+    'Análisis de ingresos y gastos',
+  ],
+};
+---
+
+<!doctype html>
+<html lang="es" class="h-full bg-surface-bg antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#08B889" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={fullImageUrl} />
+    <meta property="og:site_name" content="Spendly" />
+    <meta property="og:locale" content="es_ES" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={fullImageUrl} />
+
+    <!-- Sitemap -->
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body class="min-h-full flex flex-col text-content-primary bg-surface-bg selection:bg-spendly-100 selection:text-spendly-700">
+    <!-- Enlace accesible de salto al contenido -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 bg-spendly-500 text-white px-4 py-2.5 rounded-lg shadow-lg font-medium outline-none ring-2 ring-white"
+    >
+      Saltar al contenido principal
+    </a>
+
+    <Navbar />
+
+    <main id="main-content" class="flex-grow">
+      <slot />
+    </main>
+
+    <Footer />
+
+    <script>
+      import { initGsapAnimations } from '../scripts/gsap-motion';
+      initGsapAnimations();
+      document.addEventListener('astro:page-load', initGsapAnimations);
+    </script>
+  </body>
+</html>

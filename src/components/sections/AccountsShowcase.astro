@@ -1,0 +1,55 @@
+---
+import Badge from '../ui/Badge.astro';
+---
+
+<section class="py-16 sm:py-24 bg-surface-bg">
+  <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <!-- Columna Visual Izquierda -->
+      <div class="lg:col-span-6 order-2 lg:order-1 flex justify-center">
+        <div class="w-full max-w-lg rounded-2xl sm:rounded-3xl p-3 bg-white border border-surface-border shadow-soft-lg">
+          <img
+            src="/images/illustrations/accounts-wallet.png"
+            alt="Ilustración de cuentas, tarjetas y billeteras organizadas en Spendly."
+            width="560"
+            height="380"
+            class="w-full h-auto rounded-xl sm:rounded-2xl object-cover"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <!-- Columna Texto Derecha -->
+      <div class="lg:col-span-6 order-1 lg:order-2 flex flex-col items-start">
+        <div class="mb-3">
+          <Badge variant="mint">Gestión Centralizada</Badge>
+        </div>
+
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-content-primary leading-[1.18]">
+          Todas tus cuentas<br />
+          <span class="spendly-gradient-text">en un solo lugar.</span>
+        </h2>
+
+        <p class="mt-5 text-base sm:text-lg text-content-secondary leading-relaxed">
+          Organiza efectivo, bancos, tarjetas y otras cuentas sin perder de vista tu saldo consolidado.
+        </p>
+
+        <div class="mt-8 space-y-4 w-full">
+          <div class="p-4 rounded-xl bg-white border border-surface-border">
+            <h3 class="text-sm font-bold text-content-primary">Transferencias directas</h3>
+            <p class="text-xs sm:text-sm text-content-secondary mt-1">
+              Mueve saldos entre tus cuentas con total exactitud: el dinero cambia de lugar sin distorsionar tus reportes de ingresos ni gastos.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white border border-surface-border">
+            <h3 class="text-sm font-bold text-content-primary">Soporte para múltiples tipos</h3>
+            <p class="text-xs sm:text-sm text-content-secondary mt-1">
+              Distingue entre efectivo disponible para el día a día, cuentas bancarias corrientes y billeteras electrónicas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

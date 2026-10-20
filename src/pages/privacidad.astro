@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionTitle from '../components/ui/SectionTitle.astro';
+
+const seoTitle = 'Política de Privacidad — Spendly by NovaTec';
+const seoDescription = 'Conoce nuestra política sobre el tratamiento responsable y la privacidad de tus datos en Spendly.';
+---
+
+<BaseLayout title={seoTitle} description={seoDescription}>
+  <section class="py-16 sm:py-24 bg-surface-bg border-b border-surface-border">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+      <SectionTitle
+        badge="Legal"
+        title="Política de Privacidad"
+        subtitle="Última actualización: Octubre 2026. Tu privacidad y el control sobre tus datos son nuestra prioridad."
+        align="left"
+      />
+    </div>
+  </section>
+
+  <section class="py-16 sm:py-20 bg-white">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl prose prose-slate">
+      <div class="space-y-8 text-content-secondary leading-relaxed text-sm sm:text-base">
+        <div>
+          <h2 class="text-xl font-bold text-content-primary mb-3">1. Compromiso de Privacidad</h2>
+          <p>
+            Spendly by NovaTec respeta tu privacidad y se compromete a proteger los datos personales y financieros que registras en la plataforma. No comercializamos, vendemos ni compartimos tu información personal con anunciantes o terceros para fines publicitarios.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-content-primary mb-3">2. Información que Registras</h2>
+          <p>
+            Los datos que almacenas en Spendly (nombres de cuentas, montos de ingresos o gastos, categorías y presupuestos) son gestionados bajo tu exclusivo control. La aplicación opera con los datos estrictamente necesarios para prestar el servicio de ordenamiento y balance financiero.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-content-primary mb-3">3. Medidas de Seguridad</h2>
+          <p>
+            Implementamos protocolos de cifrado en tránsito (HTTPS/TLS) y mecanismos de aislamiento por cuenta para asegurar que únicamente tú puedas consultar y manipular tus registros.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-content-primary mb-3">4. Derechos del Titular</h2>
+          <p>
+            Puedes solicitar la corrección o eliminación completa de tu cuenta y los datos asociados en cualquier momento escribiendo a nuestro equipo de soporte.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,57 @@
+---
+import Badge from '../ui/Badge.astro';
+---
+
+<section class="py-16 sm:py-24 bg-white border-y border-surface-border">
+  <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <!-- Columna Texto Izquierda -->
+      <div class="lg:col-span-6 flex flex-col items-start">
+        <div class="mb-3">
+          <Badge variant="mint">Análisis y Tendencias</Badge>
+        </div>
+
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-content-primary leading-[1.18]">
+          Entiende tus hábitos<br />
+          <span class="spendly-gradient-text">financieros reales.</span>
+        </h2>
+
+        <p class="mt-5 text-base sm:text-lg text-content-secondary leading-relaxed">
+          Visualiza ingresos, gastos, categorías y tendencias para comprender mejor cómo administras tu dinero sin perderte en fórmulas complejas.
+        </p>
+
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+          <div class="p-4 rounded-xl bg-surface-cardSubtle border border-surface-border">
+            <span class="text-xs font-bold text-spendly-700 uppercase tracking-wider block mb-1">Por Categoría</span>
+            <p class="text-sm text-content-primary font-semibold">Desglose de gastos</p>
+            <p class="text-xs text-content-secondary mt-1">Identifica tus áreas de mayor consumo para saber dónde recortar.</p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-surface-cardSubtle border border-surface-border">
+            <span class="text-xs font-bold text-spendly-700 uppercase tracking-wider block mb-1">Por Periodo</span>
+            <p class="text-sm text-content-primary font-semibold">Día, mes y año</p>
+            <p class="text-xs text-content-secondary mt-1">Compara meses anteriores para evaluar si tu ahorro está creciendo.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna Visual Derecha -->
+      <div class="lg:col-span-6 flex justify-center">
+        <div class="relative w-full max-w-lg rounded-2xl sm:rounded-3xl p-3 bg-surface-cardSubtle border border-surface-border shadow-soft-lg group">
+          <img
+            src="/images/gifs/spendly-analytics-chart.gif"
+            alt="Demostración dinámica de gráficas de distribución y análisis mensual en Spendly."
+            width="640"
+            height="480"
+            class="w-full h-auto rounded-xl sm:rounded-2xl object-cover shadow-soft transition-transform duration-300 group-hover:scale-[1.01]"
+            loading="lazy"
+          />
+          <div class="absolute bottom-6 right-6 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-surface-border shadow-soft flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-spendly-500 animate-pulse"></span>
+            <span class="text-xs font-semibold text-content-primary">Gráficas Dinámicas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

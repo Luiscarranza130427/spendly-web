@@ -1,0 +1,138 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionTitle from '../components/ui/SectionTitle.astro';
+import Badge from '../components/ui/Badge.astro';
+import FinalCTA from '../components/sections/FinalCTA.astro';
+
+const securityPillars = [
+  {
+    title: 'Autenticación y Sesiones Protegidas',
+    description: 'El acceso a Spendly se realiza mediante credenciales individuales gestionadas con hashing robusto y cookies de sesión configuradas con atributos de seguridad (HttpOnly, SameSite y Secure).',
+    bullets: [
+      'Almacenamiento seguro de credenciales con algoritmos modernos',
+      'Expiración controlada y revocación de sesiones inactivas',
+      'Protección contra secuestro de sesiones e intentos de fuerza bruta',
+    ],
+  },
+  {
+    title: 'Cifrado en Tránsito con HTTPS/TLS',
+    description: 'Cada comunicación entre tu navegador web y nuestra infraestructura está cifrada obligatoriamente mediante protocolos TLS, impidiendo que terceros puedan interceptar tus transacciones.',
+    bullets: [
+      'Redirección automática de HTTP a HTTPS',
+      'Certificados SSL/TLS modernos con suite de cifrado restrictiva',
+      'Cabeceras de seguridad estrictas (HSTS, Content-Security-Policy)',
+    ],
+  },
+  {
+    title: 'Aislamiento Estricto por Usuario y Espacio',
+    description: 'Tu espacio financiero es exclusivo. La arquitectura del sistema garantiza que las consultas de base de datos filtren estrictamente por el identificador del usuario autenticado.',
+    bullets: [
+      'Barreras lógicas infranqueables entre cuentas de usuarios',
+      'Políticas de autorización que impiden la visualización de datos ajenos',
+      'Cero compartición de datos financieros con terceros con fines publicitarios',
+    ],
+  },
+  {
+    title: 'Validación y Sanitización en Servidor',
+    description: 'No confiamos exclusivamente en el cliente. Cada monto, fecha, categoría y transferencia se valida minuciosamente en el backend antes de persistirse en la base de datos.',
+    bullets: [
+      'Prevención contra inyecciones SQL mediante consultas parametrizadas',
+      'Sanitización sistemática contra Cross-Site Scripting (XSS)',
+      'Validación de esquemas de datos estricta para garantizar consistencia contable',
+    ],
+  },
+  {
+    title: 'Integridad y Respaldos de Datos',
+    description: 'La base de datos relacional asegura la atomicidad de las operaciones financieras, evitando que una transferencia quede registrada a medias.',
+    bullets: [
+      'Transacciones atómicas (ACID) en movimientos entre cuentas',
+      'Copias de seguridad periódicas para prevenir pérdidas accidentales',
+      'Monitoreo continuo de salud del sistema',
+    ],
+  },
+];
+
+const seoTitle = 'Seguridad y Privacidad — Spendly';
+const seoDescription = 'Conoce las medidas técnicas y arquitectónicas reales que protegen tus finanzas en Spendly: autenticación, HTTPS, aislamiento de datos y validación en servidor.';
+---
+
+<BaseLayout title={seoTitle} description={seoDescription}>
+  <!-- Hero de Seguridad -->
+  <section class="py-16 sm:py-24 bg-surface-bg border-b border-surface-border">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <Badge variant="mint" class="mb-4">Protección Integral</Badge>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-content-primary max-w-4xl mx-auto leading-[1.15]">
+        Tu información financiera <span class="spendly-gradient-text">merece protección.</span>
+      </h1>
+      <p class="mt-6 text-lg text-content-secondary max-w-2xl mx-auto leading-relaxed">
+        En Spendly entendemos que la privacidad de tus finanzas es fundamental. Explicamos con honestidad técnica las medidas que protegen tu información cada día.
+      </p>
+    </div>
+  </section>
+
+  <!-- Imagen y Compromiso de Transparencia -->
+  <section class="py-12 bg-white">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="w-full max-w-lg mx-auto rounded-2xl p-3 bg-surface-cardSubtle border border-surface-border shadow-soft mb-8">
+          <img
+            src="/images/illustrations/security.png"
+            alt="Ilustración que simboliza la protección, privacidad y custodia de datos en Spendly."
+            width="560"
+            height="360"
+            class="w-full h-auto rounded-xl object-cover"
+            loading="lazy"
+          />
+        </div>
+        <p class="text-sm sm:text-base text-content-secondary leading-relaxed">
+          No utilizamos frases de mercadeo vacías como "seguridad militar" o "100% impenetrable". Diseñamos sistemas robustos con los mejores estándares de ingeniería web para que tus registros permanezcan únicamente en tus manos.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pilares de Seguridad Detallados -->
+  <section class="py-16 sm:py-20 bg-surface-bg border-t border-surface-border">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionTitle
+        badge="Nuestros Pilares Técnicos"
+        title="Medidas reales de seguridad"
+        highlightText="en cada capa"
+        subtitle="Cómo resguardamos la integridad, privacidad y disponibilidad de tu cuenta."
+        align="center"
+      />
+
+      <div class="mt-14 max-w-4xl mx-auto space-y-8">
+        {securityPillars.map((pillar, idx) => (
+          <div class="spendly-card p-6 sm:p-8 bg-white border border-surface-border">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-spendly-100 text-spendly-700 flex items-center justify-center shrink-0 font-bold text-sm border border-spendly-200">
+                0{idx + 1}
+              </div>
+              <div class="flex-grow">
+                <h2 class="text-xl font-bold text-content-primary mb-2">
+                  {pillar.title}
+                </h2>
+                <p class="text-sm sm:text-base text-content-secondary leading-relaxed mb-4">
+                  {pillar.description}
+                </p>
+                <ul class="space-y-2">
+                  {pillar.bullets.map((b) => (
+                    <li class="flex items-start text-xs sm:text-sm text-content-secondary">
+                      <svg class="w-4 h-4 text-spendly-500 mr-2 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <FinalCTA />
+</BaseLayout>

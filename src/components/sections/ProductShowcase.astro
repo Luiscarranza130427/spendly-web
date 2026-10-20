@@ -1,0 +1,65 @@
+---
+import SectionTitle from '../ui/SectionTitle.astro';
+---
+
+<section class="py-16 sm:py-24 bg-white border-y border-surface-border overflow-hidden">
+  <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionTitle
+      badge="El Panel Spendly"
+      title="Todo lo importante,"
+      highlightText="sin complicaciones"
+      subtitle="Consulta tus cuentas, movimientos y balance desde un panel diseñado para mostrarte lo que realmente importa."
+      align="center"
+    />
+
+    <!-- Mockup Protagonista en Gran Formato -->
+    <div class="mt-12 sm:mt-16 relative">
+      <div class="relative mx-auto max-w-5xl rounded-2xl sm:rounded-3xl p-3 sm:p-5 bg-surface-cardSubtle border border-surface-border shadow-soft-xl">
+        <div class="rounded-xl sm:rounded-2xl overflow-hidden bg-white border border-surface-borderSubtle relative group">
+          <!-- Video de demostración en vivo con fallback a GIF de alta calidad -->
+          <video
+            autoplay
+            loop
+            muted
+            playsinline
+            preload="auto"
+            class="w-full h-auto object-cover block shadow-soft"
+            poster="/images/gifs/spendly-dashboard-live.gif"
+          >
+            <source src="/videos/spendly-dashboard-demo.mp4" type="video/mp4" />
+            <!-- Fallback para navegadores antiguos -->
+            <img
+              src="/images/gifs/spendly-dashboard-live.gif"
+              alt="Demostración visual del panel interactivo de Spendly mostrando balance y movimientos en vivo"
+              width="1280"
+              height="720"
+              class="w-full h-auto object-cover"
+            />
+          </video>
+
+          <!-- Badge flotante de Demo en Vivo -->
+          <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-surface-border shadow-soft flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-spendly-500 animate-pulse"></span>
+            <span class="text-xs font-bold text-spendly-800 tracking-wide">DEMO INTERACTIVA EN VIVO</span>
+          </div>
+        </div>
+
+        <!-- Puntos destacados de valor bajo el mockup -->
+        <div class="mt-6 pt-6 border-t border-surface-border grid grid-cols-1 sm:grid-cols-3 gap-4 text-center sm:text-left">
+          <div class="px-3">
+            <h4 class="text-sm font-bold text-content-primary">Balance en Tiempo Real</h4>
+            <p class="text-xs text-content-secondary mt-1">Conoce al instante el dinero disponible en todas tus cuentas consolidadas.</p>
+          </div>
+          <div class="px-3">
+            <h4 class="text-sm font-bold text-content-primary">Historial Limpio</h4>
+            <p class="text-xs text-content-secondary mt-1">Filtra tus movimientos por fecha, cuenta o tipo sin interfaces sobrecargadas.</p>
+          </div>
+          <div class="px-3">
+            <h4 class="text-sm font-bold text-content-primary">Control Directo</h4>
+            <p class="text-xs text-content-secondary mt-1">Registra rápidamente desde cualquier dispositivo con mínimos toques.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

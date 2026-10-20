@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionTitle from '../components/ui/SectionTitle.astro';
+
+const seoTitle = 'Términos de Servicio — Spendly by NovaTec';
+const seoDescription = 'Términos y condiciones de uso de la plataforma de finanzas personales Spendly.';
+---
+
+<BaseLayout title={seoTitle} description={seoDescription}>
+  <section class="py-16 sm:py-24 bg-surface-bg border-b border-surface-border">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+      <SectionTitle
+        badge="Legal"
+        title="Términos de Servicio"
+        subtitle="Última actualización: Octubre 2026. Condiciones de uso para la plataforma de Spendly."
+        align="left"
+      />
+    </div>
+  </section>
+
+  <section class="py-16 sm:py-20 bg-white">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+      <div class="space-y-8 text-content-secondary leading-relaxed text-sm sm:text-base">
+        <div>
+          <h2 class="text-xl font-bold text-content-primary mb-3">1. Uso del Servicio</h2>
+          <p>
+            Spendly es una herramienta de organización y registro de finanzas personales provista por NovaTec. El usuario es responsable de mantener la confidencialidad de sus credenciales de acceso y de las operaciones registradas bajo su cuenta.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-content-primary mb-3">2. Naturaleza Informativa</h2>
+          <p>
+            Spendly actúa como un facilitador de registro y visualización de gastos y presupuestos. No constituye asesoramiento financiero profesional, intermediación bancaria ni captación de fondos del público.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-content-primary mb-3">3. Disponibilidad y Mejoras</h2>
+          <p>
+            Nos esforzamos por garantizar la máxima disponibilidad del servicio y realizamos mejoras continuas para optimizar su rendimiento y seguridad.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-content-primary mb-3">4. Contacto Legal</h2>
+          <p>
+            Para consultas relacionadas con estos términos, puedes comunicarte con nosotros a través de <a href="mailto:soporte@spendly.app" class="text-spendly-600 underline">soporte@spendly.app</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

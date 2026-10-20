@@ -1,0 +1,61 @@
+---
+import Badge from '../ui/Badge.astro';
+---
+
+<section class="py-16 sm:py-24 bg-white border-y border-surface-border">
+  <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <!-- Columna Texto Izquierda -->
+      <div class="lg:col-span-6 flex flex-col items-start">
+        <div class="mb-3">
+          <Badge variant="mint">Ahorro con Propósito</Badge>
+        </div>
+
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-content-primary leading-[1.18]">
+          Convierte tus objetivos<br />
+          <span class="spendly-gradient-text">en progreso visible.</span>
+        </h2>
+
+        <p class="mt-5 text-base sm:text-lg text-content-secondary leading-relaxed">
+          Define cuánto quieres ahorrar y sigue el avance de cada meta hasta alcanzarla, ya sea tu fondo de emergencia, vacaciones o una compra importante.
+        </p>
+
+        <div class="mt-8 space-y-4 w-full">
+          <div class="p-4 rounded-xl bg-surface-cardSubtle border border-surface-border">
+            <div class="flex justify-between text-xs font-semibold text-content-secondary mb-1.5">
+              <span>Fondo de Emergencia</span>
+              <span class="text-spendly-700 font-bold">75% alcanzado</span>
+            </div>
+            <div class="w-full bg-surface-border rounded-full h-2.5 overflow-hidden">
+              <div class="bg-spendly-500 h-2.5 rounded-full" style="width: 75%"></div>
+            </div>
+            <p class="text-xs text-content-secondary mt-2">Registra aportes individuales y observa tu meta acercarse día a día.</p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-surface-cardSubtle border border-surface-border">
+            <h3 class="text-sm font-bold text-content-primary">Visualiza el tiempo restante</h3>
+            <p class="text-xs sm:text-sm text-content-secondary mt-1">
+              Establece fechas estimadas para mantener el foco y saber con exactitud cuánto necesitas apartar cada mes.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna Visual Derecha -->
+        <div class="relative w-full max-w-lg rounded-2xl sm:rounded-3xl p-3 bg-surface-cardSubtle border border-surface-border shadow-soft-lg group">
+          <img
+            src="/images/gifs/spendly-goals-progress.gif"
+            alt="Demostración dinámica de metas de ahorro progresivas en Spendly."
+            width="640"
+            height="480"
+            class="w-full h-auto rounded-xl sm:rounded-2xl object-cover shadow-soft transition-transform duration-300 group-hover:scale-[1.01]"
+            loading="lazy"
+          />
+          <div class="absolute bottom-6 right-6 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-surface-border shadow-soft flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-spendly-500 animate-pulse"></span>
+            <span class="text-xs font-semibold text-content-primary">Progreso en Vivo</span>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>

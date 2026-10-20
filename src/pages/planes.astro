@@ -1,0 +1,262 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionTitle from '../components/ui/SectionTitle.astro';
+import Button from '../components/ui/Button.astro';
+import Badge from '../components/ui/Badge.astro';
+import FinalCTA from '../components/sections/FinalCTA.astro';
+import { plans, planComparisonTable, pricingFaqs } from '../data/pricing';
+import { getAppUrl } from '../data/navigation';
+
+const registerUrl = getAppUrl('registro');
+
+const seoTitle = 'Planes y Precios Oficiales — Spendly | Gratis y Pro';
+const seoDescription = 'Descubre las opciones de Spendly: plan Gratis (S/ 0 para siempre) y plan Pro (S/ 19.90 al mes con 3 días de prueba gratis). Sin comisiones ocultas.';
+---
+
+<BaseLayout title={seoTitle} description={seoDescription}>
+  <!-- Hero de Planes -->
+  <section class="py-16 sm:py-24 bg-surface-bg border-b border-surface-border">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <Badge variant="mint" class="mb-4">Precios Claros y Transparentes</Badge>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-content-primary max-w-3xl mx-auto leading-[1.15]">
+        Elige cómo quieres <span class="spendly-gradient-text">organizar tu dinero.</span>
+      </h1>
+      <p class="mt-6 text-lg text-content-secondary max-w-2xl mx-auto leading-relaxed">
+        Comienza de forma totalmente gratuita con lo esencial o desbloquea capacidad ilimitada, reportes avanzados y auditoría con Spendly Pro.
+      </p>
+    </div>
+  </section>
+
+  <!-- Tarjetas de Planes -->
+  <section class="py-16 sm:py-20 bg-white">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
+        {plans.map((plan) => (
+          <div
+            class={`spendly-card rounded-2xl p-8 sm:p-10 flex flex-col justify-between relative bg-white transition-all duration-300 hover:shadow-card-hover ${
+              plan.id === 'pro'
+                ? 'border-2 border-spendly-500 shadow-soft-xl'
+                : 'border border-surface-border shadow-soft'
+            }`}
+          >
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-2">
+                  {plan.id === 'pro' && (
+                    <svg class="w-6 h-6 text-spendly-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
+                    </svg>
+                  )}
+                  <h2 class="text-2xl sm:text-3xl font-extrabold text-content-primary">
+                    {plan.name}
+                  </h2>
+                </div>
+                {plan.id === 'gratis' ? (
+                  <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-spendly-700 text-white">
+                    Tu plan
+                  </span>
+                ) : (
+                  <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-spendly-100 text-spendly-700">
+                    Recomendado
+                  </span>
+                )}
+              </div>
+
+              <p class="text-sm sm:text-base text-content-secondary leading-relaxed mb-6">
+                {plan.tagline}
+              </p>
+
+              <div class="mb-6 pb-6 border-b border-surface-borderSubtle">
+                <div class="flex items-baseline gap-1.5">
+                  <span class="text-3xl sm:text-4xl font-black text-content-primary">
+                    {plan.currency}/
+                  </span>
+                  <span class="text-5xl sm:text-6xl font-black text-content-primary tracking-tight">
+                    {plan.priceNumber}
+                  </span>
+                  <span class="text-sm font-medium text-content-secondary ml-1">
+                    {plan.periodDisplay}
+                  </span>
+                </div>
+                {plan.trialNote ? (
+                  <p class="text-xs font-medium text-content-secondary mt-2">
+                    {plan.trialNote}
+                  </p>
+                ) : (
+                  <p class="text-xs font-medium text-content-secondary mt-2 opacity-0">
+                    &nbsp;
+                  </p>
+                )}
+              </div>
+
+              <ul class="space-y-3.5 mb-8">
+                {plan.featureItems.map((item) => (
+                  <li class={`flex items-start text-sm ${item.included ? 'text-content-primary font-medium' : 'text-content-muted'}`}>
+                    {item.included ? (
+                      <svg class="w-4 h-4 text-spendly-600 mr-2.5 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    ) : (
+                      <span class="w-4 h-4 mr-2.5 shrink-0 text-center font-bold text-content-muted mt-0.5 leading-none">—</span>
+                    )}
+                    <span>{item.text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="space-y-3 pt-4 border-t border-surface-borderSubtle">
+              {plan.id === 'gratis' ? (
+                <div class="space-y-2">
+                  <Button
+                    href={registerUrl}
+                    variant="secondary"
+                    size="lg"
+                    class="w-full text-center border-spendly-200 hover:border-spendly-400"
+                  >
+                    Comenzar Gratis
+                  </Button>
+                  <p class="text-xs text-center text-spendly-700 font-semibold py-1">
+                    Es tu plan inicial sin costo
+                  </p>
+                </div>
+              ) : (
+                <div class="space-y-2.5">
+                  <a
+                    href={registerUrl}
+                    class="w-full text-center py-3.5 px-4 rounded-xl text-sm font-semibold text-white bg-spendly-700 hover:bg-spendly-800 transition-colors block shadow-soft"
+                  >
+                    Probar Pro 3 días gratis
+                  </a>
+                  <a
+                    href={registerUrl}
+                    class="w-full text-center py-2.5 px-4 rounded-xl text-sm font-medium text-content-primary border border-surface-border hover:bg-surface-cardSubtle flex items-center justify-center gap-2 transition-colors"
+                  >
+                    <svg class="w-4 h-4 text-content-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                    <span>Contratar Pro</span>
+                  </a>
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabla Comparativa Detallada -->
+  <section id="comparativa" class="py-16 sm:py-24 bg-surface-bg border-y border-surface-border">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionTitle
+        badge="Comparativa"
+        title="Comparación detallada"
+        highlightText="de características"
+        subtitle="Analiza lado a lado las capacidades de cada plan para elegir la opción que se adapta a tu ritmo."
+        align="center"
+      />
+
+      <div class="mt-14 max-w-4xl mx-auto overflow-x-auto rounded-2xl border border-surface-border bg-white shadow-soft">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="border-b border-surface-border bg-surface-cardSubtle">
+              <th scope="col" class="py-4 px-6 text-sm font-bold text-content-primary w-1/2">
+                Característica
+              </th>
+              <th scope="col" class="py-4 px-6 text-sm font-bold text-center text-content-primary w-1/4">
+                Gratis (S/ 0)
+              </th>
+              <th scope="col" class="py-4 px-6 text-sm font-bold text-center text-spendly-700 w-1/4">
+                Pro (S/ 19.90/mes)
+              </th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-surface-borderSubtle text-sm">
+            {
+              planComparisonTable.map((group) => (
+                <>
+                  <tr class="bg-spendly-50/60">
+                    <th colspan="3" scope="colgroup" class="py-2.5 px-6 text-xs font-bold uppercase tracking-wider text-spendly-800">
+                      {group.category}
+                    </th>
+                  </tr>
+                  {group.features.map((row) => (
+                    <tr class="hover:bg-surface-bg/50 transition-colors">
+                      <td class="py-3.5 px-6 font-medium text-content-primary">
+                        {row.name}
+                      </td>
+                      <td class="py-3.5 px-6 text-center">
+                        {row.isCheck ? (
+                          row.freeValue === 'Sí' ? (
+                            <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-spendly-100 text-spendly-700 mx-auto" title="Incluido">
+                              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                              </svg>
+                            </span>
+                          ) : (
+                            <span class="text-content-muted font-bold text-base">—</span>
+                          )
+                        ) : (
+                          <span class="font-semibold text-content-secondary">{row.freeValue}</span>
+                        )}
+                      </td>
+                      <td class="py-3.5 px-6 text-center">
+                        {row.isCheck ? (
+                          row.proValue === 'Sí' ? (
+                            <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-spendly-500 text-white mx-auto" title="Incluido en Pro">
+                              <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                              </svg>
+                            </span>
+                          ) : (
+                            <span class="text-content-muted font-bold text-base">—</span>
+                          )
+                        ) : (
+                          <span class="font-bold text-spendly-700 bg-spendly-50 px-2 py-0.5 rounded border border-spendly-100">{row.proValue}</span>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preguntas sobre Planes -->
+  <section class="py-16 sm:py-24 bg-white">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionTitle
+        badge="FAQ de Planes"
+        title="Preguntas frecuentes sobre"
+        highlightText="precios y planes"
+        subtitle="Respuestas claras y honestas sobre nuestro modelo de precios."
+        align="center"
+      />
+
+      <div class="mt-12 max-w-3xl mx-auto space-y-4">
+        {pricingFaqs.map((faq) => (
+          <details class="group rounded-2xl border border-surface-border bg-surface-cardSubtle transition-all duration-200 open:bg-white open:shadow-soft-md">
+            <summary class="flex items-center justify-between p-5 cursor-pointer list-none select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-spendly-500 rounded-2xl">
+              <span class="text-base font-semibold text-content-primary pr-4">{faq.question}</span>
+              <div class="w-7 h-7 rounded-lg bg-spendly-100 text-spendly-700 flex items-center justify-center shrink-0 transition-transform duration-200 group-open:rotate-180">
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </summary>
+            <div class="px-5 pb-5 pt-1 text-sm text-content-secondary leading-relaxed border-t border-surface-borderSubtle mt-1">
+              <p>{faq.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <FinalCTA />
+</BaseLayout>

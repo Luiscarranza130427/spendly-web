@@ -1,0 +1,67 @@
+---
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'secondary' | 'ghost' | 'outline';
+  size?: 'sm' | 'md' | 'lg';
+  isExternal?: boolean;
+  class?: string;
+  id?: string;
+  type?: 'button' | 'submit' | 'reset';
+  'aria-label'?: string;
+}
+
+const {
+  href,
+  variant = 'primary',
+  size = 'md',
+  isExternal = false,
+  class: className = '',
+  id,
+  type = 'button',
+  'aria-label': ariaLabel,
+  ...rest
+} = Astro.props;
+
+const baseStyles = 'inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-spendly-500 focus-visible:ring-offset-2 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none select-none';
+
+const variants = {
+  primary: 'bg-spendly-500 text-white shadow-soft hover:bg-spendly-600 hover:shadow-soft-md border border-spendly-500 hover:border-spendly-600',
+  secondary: 'bg-spendly-100 text-spendly-700 hover:bg-spendly-200 border border-transparent font-semibold',
+  ghost: 'bg-transparent text-content-primary hover:bg-spendly-50 hover:text-spendly-700',
+  outline: 'bg-white text-content-primary border border-surface-border hover:border-spendly-500 hover:text-spendly-700 shadow-soft-sm',
+};
+
+const sizes = {
+  sm: 'text-xs px-3.5 py-2 gap-1.5',
+  md: 'text-sm px-5 py-2.5 gap-2',
+  lg: 'text-base px-6 py-3.5 gap-2.5 font-semibold',
+};
+
+const classes = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`;
+---
+
+{
+  href ? (
+    <a
+      href={href}
+      class={classes}
+      id={id}
+      aria-label={ariaLabel}
+      target={isExternal ? '_blank' : undefined}
+      rel={isExternal ? 'noopener noreferrer' : undefined}
+      {...rest}
+    >
+      <slot />
+    </a>
+  ) : (
+    <button
+      type={type}
+      class={classes}
+      id={id}
+      aria-label={ariaLabel}
+      {...rest}
+    >
+      <slot />
+    </button>
+  )
+}
