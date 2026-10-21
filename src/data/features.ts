@@ -31,7 +31,7 @@ export const coreFeatures: FeatureItem[] = [
     description: 'Registra ingresos, gastos y transferencias con un historial claro, filtros y categorización precisa.',
     benefit: 'Identifica exactamente en qué gastas cada peso y clasifica tus transacciones en segundos.',
     iconName: 'ArrowLeftRight',
-    assetPath: '/images/gifs/spendly-dashboard-live.gif',
+    assetPath: '/images/gifs/spendly-dashboard-poster.webp',
     highlights: [
       'Ingresos, gastos y transferencias entre cuentas propias',
       'Filtros por fecha, categoría y cuenta',

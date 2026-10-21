@@ -60,14 +60,28 @@ const registerUrl = getAppUrl('registro');
       <!-- Columna Visual: Demostración Interactiva -->
       <div class="lg:col-span-6 flex justify-center">
         <div class="relative w-full max-w-lg rounded-2xl sm:rounded-3xl p-3 bg-surface-cardSubtle border border-surface-border shadow-soft-lg group">
-          <img
-            src="/images/gifs/spendly-dashboard-live.gif"
-            alt="Demostración dinámica de finanzas claras mostrando balance consolidado y movimientos en tiempo real en Spendly."
+          <video
+            autoplay
+            loop
+            muted
+            playsinline
+            preload="none"
+            class="w-full h-auto rounded-xl sm:rounded-2xl object-cover shadow-soft transition-transform duration-300 group-hover:scale-[1.01]"
+            poster="/images/gifs/spendly-dashboard-poster.webp"
             width="800"
             height="450"
-            class="w-full h-auto rounded-xl sm:rounded-2xl object-cover shadow-soft transition-transform duration-300 group-hover:scale-[1.01]"
-            loading="lazy"
-          />
+          >
+            <source src="/videos/spendly-dashboard-demo.mp4" type="video/mp4" />
+            <img
+              src="/images/gifs/spendly-dashboard-poster.webp"
+              alt="Demostración dinámica de finanzas claras mostrando balance consolidado y movimientos en tiempo real en Spendly."
+              width="800"
+              height="450"
+              loading="lazy"
+              decoding="async"
+              class="w-full h-auto rounded-xl sm:rounded-2xl object-cover"
+            />
+          </video>
           <div class="absolute bottom-6 right-6 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-surface-border shadow-soft flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-spendly-500 animate-ping"></span>
             <span class="text-xs font-semibold text-content-primary">Balance en Tiempo Real</span>
