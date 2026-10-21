@@ -10,12 +10,12 @@
 @layer base {
   :root {
     --color-spendly-primary: #08B889;
-    --color-spendly-emerald: #0C8F72;
-    --color-spendly-dark: #075D50;
+    --color-spendly-emerald: #087E63;
+    --color-spendly-dark: #065D4F;
     --color-spendly-mint: #DDF7EC;
     --color-spendly-bg: #F6FAF8;
     --color-text-primary: #102A2A;
-    --color-text-secondary: #5F7270;
+    --color-text-secondary: #475B59;
   }
 
   html {

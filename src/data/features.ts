@@ -17,7 +17,7 @@ export const coreFeatures: FeatureItem[] = [
     description: 'Administra efectivo, cuentas bancarias, tarjetas, ahorros y billeteras desde un solo lugar.',
     benefit: 'Visualiza el saldo consolidado de todo tu patrimonio sin saltar entre diferentes aplicaciones bancarias.',
     iconName: 'Wallet',
-    assetPath: '/images/illustrations/accounts-wallet.png',
+    assetPath: '/images/illustrations/accounts-wallet.webp',
     highlights: [
       'Soporte para efectivo, bancos, débito y crédito',
       'Saldos actualizados al instante',
@@ -59,7 +59,7 @@ export const coreFeatures: FeatureItem[] = [
     description: 'Define límites y sigue tu progreso para mantener tus gastos bajo control durante cada periodo.',
     benefit: 'Evita sorpresas a fin de mes con una visión en tiempo real de cuánto dinero te queda disponible.',
     iconName: 'PieChart',
-    assetPath: '/images/illustrations/budgets-3d.jpg',
+    assetPath: '/images/illustrations/budgets-3d.webp',
     highlights: [
       'Topes de gasto por categoría',
       'Progreso visual con indicadores de consumo',
@@ -87,7 +87,7 @@ export const coreFeatures: FeatureItem[] = [
     description: 'Organiza ingresos y gastos periódicos como alquiler, suscripciones y nóminas sin perderlos de vista.',
     benefit: 'Ten previsión de tus compromisos fijos del mes antes de comprometer dinero en ocio.',
     iconName: 'CalendarSync',
-    assetPath: '/images/illustrations/recurring-3d.jpg',
+    assetPath: '/images/illustrations/recurring-3d.webp',
     highlights: [
       'Programación de pagos y suscripciones',
       'Recordatorio de compromisos próximos',
@@ -104,7 +104,7 @@ export const additionalFeatures: FeatureItem[] = [
     description: 'Consulta resúmenes financieros mensuales y anuales listos para revisar tu evolución patrimonial.',
     benefit: 'Toda tu información estructurada para tomar decisiones con certeza y sin hojas de cálculo rotas.',
     iconName: 'FileSpreadsheet',
-    assetPath: '/images/illustrations/reports-3d.jpg',
+    assetPath: '/images/illustrations/reports-3d.webp',
     highlights: [
       'Resumen de balance por periodos',
       'Evolución del ahorro acumulado',
@@ -118,7 +118,7 @@ export const additionalFeatures: FeatureItem[] = [
     description: 'Consulta Spendly desde tu laptop, tablet o teléfono con una interfaz fluida y adaptada.',
     benefit: 'Registra un gasto al instante desde tu teléfono mientras esperas tu café o analiza en pantalla grande desde tu escritorio.',
     iconName: 'Smartphone',
-    assetPath: '/images/illustrations/multidevice.png',
+    assetPath: '/images/illustrations/multidevice.webp',
     highlights: [
       'Diseño 100% responsivo para navegadores modernos',
       'Experiencia ágil y ligera en conexiones móviles',
@@ -132,7 +132,7 @@ export const additionalFeatures: FeatureItem[] = [
     description: 'Tus datos y espacios financieros se mantienen protegidos, aislados y con validaciones en servidor.',
     benefit: 'Tus finanzas son estrictamente privadas: sólo tú tienes acceso a tus registros y cuentas.',
     iconName: 'ShieldCheck',
-    assetPath: '/images/illustrations/security.png',
+    assetPath: '/images/illustrations/security.webp',
     highlights: [
       'Aislamiento de datos por usuario y espacio',
       'Cifrado en tránsito con HTTPS estricto',

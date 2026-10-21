@@ -22,40 +22,41 @@ import SectionTitle from '../ui/SectionTitle.astro';
             loop
             muted
             playsinline
-            preload="auto"
+            preload="metadata"
             class="w-full h-auto object-cover block shadow-soft"
-            poster="/images/gifs/spendly-dashboard-live.gif"
+            poster="/images/gifs/spendly-dashboard-poster.webp"
           >
             <source src="/videos/spendly-dashboard-demo.mp4" type="video/mp4" />
             <!-- Fallback para navegadores antiguos -->
             <img
-              src="/images/gifs/spendly-dashboard-live.gif"
+              src="/images/gifs/spendly-dashboard-poster.webp"
               alt="Demostración visual del panel interactivo de Spendly mostrando balance y movimientos en vivo"
               width="1280"
               height="720"
+              loading="lazy"
               class="w-full h-auto object-cover"
             />
           </video>
 
           <!-- Badge flotante de Demo en Vivo -->
           <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-surface-border shadow-soft flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-spendly-500 animate-pulse"></span>
-            <span class="text-xs font-bold text-spendly-800 tracking-wide">DEMO INTERACTIVA EN VIVO</span>
+            <span class="w-2.5 h-2.5 rounded-full bg-spendly-600 animate-pulse"></span>
+            <span class="text-xs font-bold text-spendly-900 tracking-wide">DEMO EN VIVO</span>
           </div>
         </div>
 
         <!-- Puntos destacados de valor bajo el mockup -->
         <div class="mt-6 pt-6 border-t border-surface-border grid grid-cols-1 sm:grid-cols-3 gap-4 text-center sm:text-left">
           <div class="px-3">
-            <h4 class="text-sm font-bold text-content-primary">Balance en Tiempo Real</h4>
+            <h3 class="text-sm font-bold text-content-primary">Balance en Tiempo Real</h3>
             <p class="text-xs text-content-secondary mt-1">Conoce al instante el dinero disponible en todas tus cuentas consolidadas.</p>
           </div>
           <div class="px-3">
-            <h4 class="text-sm font-bold text-content-primary">Historial Limpio</h4>
+            <h3 class="text-sm font-bold text-content-primary">Historial Limpio</h3>
             <p class="text-xs text-content-secondary mt-1">Filtra tus movimientos por fecha, cuenta o tipo sin interfaces sobrecargadas.</p>
           </div>
           <div class="px-3">
-            <h4 class="text-sm font-bold text-content-primary">Control Directo</h4>
+            <h3 class="text-sm font-bold text-content-primary">Control Directo</h3>
             <p class="text-xs text-content-secondary mt-1">Registra rápidamente desde cualquier dispositivo con mínimos toques.</p>
           </div>
         </div>

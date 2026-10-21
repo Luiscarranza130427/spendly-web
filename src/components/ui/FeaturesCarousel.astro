@@ -114,17 +114,21 @@ import { coreFeatures } from '../../data/features';
       </div>
     </div>
 
-    <!-- Indicadores de Puntos (Dots) -->
-    <div class="flex justify-center items-center gap-2 mt-6" id="carousel-dots">
+    <!-- Indicadores de Puntos (Dots con tamaño táctil accesible mínimo 32x32px) -->
+    <div class="flex justify-center items-center gap-1 mt-6" id="carousel-dots">
       {coreFeatures.map((_, idx) => (
         <button
           type="button"
-          class={`carousel-dot w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-            idx === 0 ? 'bg-spendly-500 w-8' : 'bg-surface-border hover:bg-spendly-300'
-          }`}
+          class="carousel-dot p-2 min-w-[32px] min-h-[32px] inline-flex items-center justify-center rounded-full focus-visible:outline-spendly-500"
           data-target-index={idx}
           aria-label={`Ir a diapositiva ${idx + 1}`}
-        />
+        >
+          <span
+            class={`carousel-dot-indicator h-2.5 rounded-full transition-all duration-300 ${
+              idx === 0 ? 'bg-spendly-600 w-8' : 'bg-surface-border w-2.5 hover:bg-spendly-400'
+            }`}
+          />
+        </button>
       ))}
     </div>
   </div>
@@ -161,12 +165,14 @@ import { coreFeatures } from '../../data/features';
 
       // Actualizar dots
       dots.forEach((dot, idx) => {
+        const indicator = dot.querySelector('.carousel-dot-indicator');
+        if (!indicator) return;
         if (idx === currentIndex) {
-          dot.classList.add('bg-spendly-500', 'w-8');
-          dot.classList.remove('bg-surface-border');
+          indicator.classList.add('bg-spendly-600', 'w-8');
+          indicator.classList.remove('bg-surface-border', 'w-2.5');
         } else {
-          dot.classList.remove('bg-spendly-500', 'w-8');
-          dot.classList.add('bg-surface-border');
+          indicator.classList.remove('bg-spendly-600', 'w-8');
+          indicator.classList.add('bg-surface-border', 'w-2.5');
         }
       });
     }

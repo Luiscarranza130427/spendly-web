@@ -14,5 +14,8 @@ export default defineConfig({
       filter: (page) => !page.includes('/404'),
     }),
   ],
+  build: {
+    inlineStylesheets: 'always',
+  },
   compressHTML: true,
 });

@@ -13,7 +13,7 @@ const registerUrl = getAppUrl('registro');
       <div class="col-span-2">
         <a href="/" class="inline-flex items-center group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-spendly-500 rounded-lg">
           <img
-            src="/images/brand/spendly-logo-original.webp"
+            src="/images/brand/spendly-logo-optimized.webp"
             alt="Spendly"
             width="140"
             height="50"
@@ -34,16 +34,16 @@ const registerUrl = getAppUrl('registro');
 
       <!-- Columna: Producto -->
       <div>
-        <h4 class="text-xs font-bold uppercase tracking-wider text-content-primary mb-4">
+        <p class="text-xs font-bold uppercase tracking-wider text-content-primary mb-4">
           Producto
-        </h4>
+        </p>
         <ul class="space-y-2.5">
           {
             footerNavigation.producto.map((item) => (
               <li>
                 <a
                   href={item.href}
-                  class="text-sm text-content-secondary hover:text-spendly-600 transition-colors"
+                  class="text-sm text-content-secondary hover:text-spendly-700 transition-colors"
                 >
                   {item.label}
                 </a>
@@ -55,32 +55,32 @@ const registerUrl = getAppUrl('registro');
 
       <!-- Columna: Cuenta & Ayuda -->
       <div>
-        <h4 class="text-xs font-bold uppercase tracking-wider text-content-primary mb-4">
+        <p class="text-xs font-bold uppercase tracking-wider text-content-primary mb-4">
           Cuenta
-        </h4>
+        </p>
         <ul class="space-y-2.5 mb-6">
           <li>
-            <a href={loginUrl} class="text-sm text-content-secondary hover:text-spendly-600 transition-colors">
+            <a href={loginUrl} class="text-sm text-content-secondary hover:text-spendly-700 transition-colors">
               Iniciar sesión
             </a>
           </li>
           <li>
-            <a href={registerUrl} class="text-sm text-content-secondary hover:text-spendly-600 transition-colors">
+            <a href={registerUrl} class="text-sm text-content-secondary hover:text-spendly-700 transition-colors">
               Crear cuenta
             </a>
           </li>
         </ul>
 
-        <h4 class="text-xs font-bold uppercase tracking-wider text-content-primary mb-4">
+        <p class="text-xs font-bold uppercase tracking-wider text-content-primary mb-4">
           Ayuda
-        </h4>
+        </p>
         <ul class="space-y-2.5">
           {
             footerNavigation.ayuda.map((item) => (
               <li>
                 <a
                   href={item.href}
-                  class="text-sm text-content-secondary hover:text-spendly-600 transition-colors"
+                  class="text-sm text-content-secondary hover:text-spendly-700 transition-colors"
                 >
                   {item.label}
                 </a>
@@ -92,16 +92,16 @@ const registerUrl = getAppUrl('registro');
 
       <!-- Columna: Legal -->
       <div>
-        <h4 class="text-xs font-bold uppercase tracking-wider text-content-primary mb-4">
+        <p class="text-xs font-bold uppercase tracking-wider text-content-primary mb-4">
           Legal
-        </h4>
+        </p>
         <ul class="space-y-2.5">
           {
             footerNavigation.legal.map((item) => (
               <li>
                 <a
                   href={item.href}
-                  class="text-sm text-content-secondary hover:text-spendly-600 transition-colors"
+                  class="text-sm text-content-secondary hover:text-spendly-700 transition-colors"
                 >
                   {item.label}
                 </a>
@@ -113,7 +113,7 @@ const registerUrl = getAppUrl('registro');
     </div>
 
     <!-- Barra Inferior de Derechos -->
-    <div class="mt-12 pt-8 border-t border-surface-borderSubtle flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-content-muted">
+    <div class="mt-12 pt-8 border-t border-surface-borderSubtle flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-content-secondary">
       <p>© {currentYear} Spendly by NovaTec. Todos los derechos reservados.</p>
       <p class="flex items-center gap-1">
         <span>Diseñado para tu bienestar financiero personal.</span>

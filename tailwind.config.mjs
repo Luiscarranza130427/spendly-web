@@ -11,8 +11,8 @@ export default {
           300: '#83DFC1',
           400: '#43C7A1',
           500: '#08B889', // Verde principal
-          600: '#0C8F72', // Verde esmeralda
-          700: '#075D50', // Verde oscuro
+          600: '#087E63', // Esmeralda con contraste óptimo WCAG AA (> 5:1)
+          700: '#065D4F', // Verde oscuro profundo (> 7:1)
           800: '#0B473E',
           900: '#0B3B34',
           950: '#04221E',
@@ -26,8 +26,8 @@ export default {
         },
         content: {
           primary: '#102A2A', // Texto principal
-          secondary: '#5F7270', // Texto secundario
-          muted: '#8A9C9A',
+          secondary: '#475B59', // Texto secundario WCAG AA (> 5.5:1)
+          muted: '#4E6563', // Texto atenuado WCAG AA (> 6:1)
           inverse: '#FFFFFF',
         },
       },
