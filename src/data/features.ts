@@ -45,7 +45,7 @@ export const coreFeatures: FeatureItem[] = [
     description: 'Entiende cómo se mueve tu dinero por día, mes y año con resúmenes claros e intuitivos.',
     benefit: 'Descubre patrones de gasto innecesarios y optimiza tu capacidad de ahorro mensual.',
     iconName: 'TrendingUp',
-    assetPath: '/images/gifs/spendly-analytics-chart.gif',
+    assetPath: '/images/illustrations/analytics-dashboard.webp',
     highlights: [
       'Distribución de gastos por categorías',
       'Comparativa de ingresos vs. egresos',
@@ -73,7 +73,7 @@ export const coreFeatures: FeatureItem[] = [
     description: 'Define cuánto quieres ahorrar y sigue el avance de cada meta hasta alcanzarla con éxito.',
     benefit: 'Mantén la motivación viendo cómo cada pequeño ahorro te acerca a tu fondo de emergencia o viaje soñado.',
     iconName: 'Target',
-    assetPath: '/images/gifs/spendly-goals-progress.gif',
+    assetPath: '/images/illustrations/goals-savings.webp',
     highlights: [
       'Metas a corto, mediano y largo plazo',
       'Barra de progreso visual y aportes registrados',
